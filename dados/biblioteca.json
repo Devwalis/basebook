@@ -1,0 +1,19 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "admin",
+      "nome": "Administrador",
+      "senha": "admin123",
+      "perfil": "bibliotecario"
+    }
+  ],
+  "livros": [],
+  "emprestimos": [],
+  "proximos_ids": {
+    "usuario": 2,
+    "livro": 1,
+    "exemplar": 1,
+    "emprestimo": 1
+  }
+}
