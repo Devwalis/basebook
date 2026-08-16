@@ -1,4 +1,4 @@
-from biblioteca import livros, storage, usuarios
+from biblioteca import emprestimos, livros, storage, usuarios
 
 
 def tela_login(dados):
@@ -83,12 +83,119 @@ def fluxo_listar_livros(dados):
             print(f"    Exemplar {ex['id']}: {estado}")
 
 
+def escolher_usuario(dados, usuario_logado):
+    if usuario_logado["perfil"] == "leitor":
+        return usuario_logado
+    termo = input("Login ou id do usuário: ").strip()
+    alvo = usuarios.buscar(dados, termo)
+    if alvo is None:
+        print("Usuário não encontrado.")
+        return None
+    return alvo
+
+
+def escolher_emprestimo_ativo(dados, usuario):
+    ativos = emprestimos.emprestimos_ativos(dados, usuario["id"])
+    if not ativos:
+        print("Nenhum empréstimo ativo para esse usuário.")
+        return None
+    for e in ativos:
+        print(formatar_emprestimo(e))
+    codigo = input("Id do empréstimo: ").strip()
+    for e in ativos:
+        if str(e["id"]) == codigo:
+            return e
+    print("Empréstimo inválido.")
+    return None
+
+
+def formatar_emprestimo(e):
+    devolucao = e["data_devolucao"] or "em aberto"
+    marca = " [ATRASADO]" if emprestimos.esta_atrasado(e) else ""
+    return (
+        f"[{e['id']}] usuário {e['usuario_id']} | livro {e['livro_id']} "
+        f"exemplar {e['exemplar_id']} | em {e['data_emprestimo']} | "
+        f"prevista {e['data_prevista']} | devolução {devolucao} | "
+        f"renovações {e['renovacoes']}{marca}"
+    )
+
+
+def exibir_emprestimo(registro):
+    print(f"Empréstimo {registro['id']} registrado. Devolução prevista em {registro['data_prevista']}.")
+
+
+def fluxo_emprestar(dados, usuario_logado):
+    print("\n=== EMPRESTAR LIVRO ===")
+    alvo = escolher_usuario(dados, usuario_logado)
+    if alvo is None:
+        return
+    obra = escolher_obra(dados)
+    if obra is None:
+        return
+    disponiveis = livros.listar_disponiveis(obra)
+    if not disponiveis:
+        print("Todos os exemplares desta obra estão emprestados.")
+        return
+    for ex in disponiveis:
+        print(f"Exemplar disponível: {ex['id']}")
+    exemplar_id = input("Id do exemplar: ").strip()
+    exemplar = next((ex for ex in disponiveis if str(ex["id"]) == exemplar_id), None)
+    if exemplar is None:
+        print("Exemplar inválido.")
+        return
+    registro, erro = emprestimos.emprestar(dados, alvo, obra, exemplar)
+    if erro:
+        print(erro)
+    else:
+        exibir_emprestimo(registro)
+
+
+def fluxo_renovar(dados, usuario_logado):
+    print("\n=== RENOVAR EMPRÉSTIMO ===")
+    alvo = escolher_usuario(dados, usuario_logado)
+    if alvo is None:
+        return
+    emprestimo = escolher_emprestimo_ativo(dados, alvo)
+    if emprestimo is None:
+        return
+    renovado, erro = emprestimos.renovar(dados, emprestimo)
+    if erro:
+        print(erro)
+    else:
+        print(
+            f"Renovado. Nova devolução prevista em {renovado['data_prevista']} "
+            f"(renovações: {renovado['renovacoes']})."
+        )
+
+
+def fluxo_meus_emprestimos(dados, usuario):
+    print("\n=== MEUS EMPRÉSTIMOS ===")
+    ativos = emprestimos.emprestimos_ativos(dados, usuario["id"])
+    if not ativos:
+        print("Nenhum empréstimo ativo.")
+        return
+    for e in ativos:
+        print(formatar_emprestimo(e))
+
+
+def fluxo_todos_emprestimos(dados):
+    print("\n=== TODOS OS EMPRÉSTIMOS ===")
+    if not dados["emprestimos"]:
+        print("Nenhum empréstimo registrado.")
+        return
+    for e in dados["emprestimos"]:
+        print(formatar_emprestimo(e))
+
+
 def menu_bibliotecario(dados, usuario_logado):
     print("\n=== SISTEMA DE BIBLIOTECA (BIBLIOTECÁRIO) ===")
     print("1 - Cadastrar usuário")
     print("2 - Cadastrar livro")
     print("3 - Remover livro")
     print("4 - Listar livros")
+    print("5 - Emprestar livro")
+    print("6 - Renovar empréstimo")
+    print("8 - Ver todos os empréstimos")
     print("9 - Sair")
     opcao = input("Opção: ").strip()
     if opcao == "1":
@@ -99,6 +206,12 @@ def menu_bibliotecario(dados, usuario_logado):
         fluxo_remover_livro(dados)
     elif opcao == "4":
         fluxo_listar_livros(dados)
+    elif opcao == "5":
+        fluxo_emprestar(dados, usuario_logado)
+    elif opcao == "6":
+        fluxo_renovar(dados, usuario_logado)
+    elif opcao == "8":
+        fluxo_todos_emprestimos(dados)
     elif opcao == "9":
         return False
     else:
@@ -108,11 +221,21 @@ def menu_bibliotecario(dados, usuario_logado):
 
 def menu_leitor(dados, usuario_logado):
     print("\n=== SISTEMA DE BIBLIOTECA (LEITOR) ===")
+    print("1 - Meus empréstimos")
+    print("2 - Emprestar livro")
+    print("3 - Renovar empréstimo")
     print("5 - Sair")
     opcao = input("Opção: ").strip()
-    if opcao == "5":
+    if opcao == "1":
+        fluxo_meus_emprestimos(dados, usuario_logado)
+    elif opcao == "2":
+        fluxo_emprestar(dados, usuario_logado)
+    elif opcao == "3":
+        fluxo_renovar(dados, usuario_logado)
+    elif opcao == "5":
         return False
-    print("Opção inválida.")
+    else:
+        print("Opção inválida.")
     return True
 
 
