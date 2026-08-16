@@ -1,4 +1,4 @@
-from biblioteca import emprestimos, livros, storage, usuarios
+from biblioteca import devolucoes, emprestimos, livros, storage, usuarios
 
 
 def tela_login(dados):
@@ -187,6 +187,23 @@ def fluxo_todos_emprestimos(dados):
         print(formatar_emprestimo(e))
 
 
+def fluxo_devolver(dados, usuario_logado):
+    print("\n=== DEVOLVER LIVRO ===")
+    alvo = escolher_usuario(dados, usuario_logado)
+    if alvo is None:
+        return
+    emprestimo = escolher_emprestimo_ativo(dados, alvo)
+    if emprestimo is None:
+        return
+    obra = livros.buscar_por_id(dados, emprestimo["livro_id"])
+    exemplar = next((ex for ex in obra["exemplares"] if ex["id"] == emprestimo["exemplar_id"]), None)
+    devolvido, erro = devolucoes.devolver(dados, emprestimo, obra, exemplar)
+    if erro:
+        print(erro)
+    else:
+        print(f"Empréstimo {devolvido['id']} devolvido em {devolvido['data_devolucao']}.")
+
+
 def menu_bibliotecario(dados, usuario_logado):
     print("\n=== SISTEMA DE BIBLIOTECA (BIBLIOTECÁRIO) ===")
     print("1 - Cadastrar usuário")
@@ -195,6 +212,7 @@ def menu_bibliotecario(dados, usuario_logado):
     print("4 - Listar livros")
     print("5 - Emprestar livro")
     print("6 - Renovar empréstimo")
+    print("7 - Devolver livro")
     print("8 - Ver todos os empréstimos")
     print("9 - Sair")
     opcao = input("Opção: ").strip()
@@ -210,6 +228,8 @@ def menu_bibliotecario(dados, usuario_logado):
         fluxo_emprestar(dados, usuario_logado)
     elif opcao == "6":
         fluxo_renovar(dados, usuario_logado)
+    elif opcao == "7":
+        fluxo_devolver(dados, usuario_logado)
     elif opcao == "8":
         fluxo_todos_emprestimos(dados)
     elif opcao == "9":
@@ -224,6 +244,7 @@ def menu_leitor(dados, usuario_logado):
     print("1 - Meus empréstimos")
     print("2 - Emprestar livro")
     print("3 - Renovar empréstimo")
+    print("4 - Devolver livro")
     print("5 - Sair")
     opcao = input("Opção: ").strip()
     if opcao == "1":
@@ -232,6 +253,8 @@ def menu_leitor(dados, usuario_logado):
         fluxo_emprestar(dados, usuario_logado)
     elif opcao == "3":
         fluxo_renovar(dados, usuario_logado)
+    elif opcao == "4":
+        fluxo_devolver(dados, usuario_logado)
     elif opcao == "5":
         return False
     else:
