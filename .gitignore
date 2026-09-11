@@ -1,2 +1,12 @@
 __pycache__/
 *.pyc
+
+
+*.py[cod]
+.venv/
+venv/
+.env
+
+*.log
+
+dados/biblioteca.json
