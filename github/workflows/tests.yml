@@ -27,6 +27,6 @@ jobs:
                 python-version: "3.13"
 
             - name: Executar testes
-              run: pytrhon3 -m unittest discover -v 
+              run: python3 -m unittest discover -v 
 
 
