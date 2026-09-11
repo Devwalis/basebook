@@ -2,13 +2,9 @@ name: Tests
 
 on:
   push:
-    branches:
-      - main
-      - develop
+    branches: [ main, develop ]
   pull_request:
-    branches:
-      - main
-      - develop
+    branches: [ main, develop ]
 
 jobs:
   tests:
@@ -20,7 +16,7 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
+          python-version: '3.12'
 
       - name: Executar testes
         run: python3 -m unittest discover -v
