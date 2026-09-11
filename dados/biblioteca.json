@@ -6,14 +6,64 @@
       "nome": "Administrador",
       "senha": "admin123",
       "perfil": "bibliotecario"
+    },
+    {
+      "id": 2,
+      "usuario": "walisson",
+      "nome": "walisson oliveira",
+      "senha": "wali123",
+      "perfil": "leitor"
     }
   ],
-  "livros": [],
-  "emprestimos": [],
+  "livros": [
+    {
+      "id": 1,
+      "titulo": "O pequeno príncipe",
+      "exemplares": [
+        {
+          "id": 1,
+          "disponivel": true,
+          "emprestado_para": null
+        },
+        {
+          "id": 2,
+          "disponivel": true,
+          "emprestado_para": null
+        },
+        {
+          "id": 3,
+          "disponivel": true,
+          "emprestado_para": null
+        },
+        {
+          "id": 4,
+          "disponivel": true,
+          "emprestado_para": null
+        },
+        {
+          "id": 5,
+          "disponivel": true,
+          "emprestado_para": null
+        }
+      ]
+    }
+  ],
+  "emprestimos": [
+    {
+      "id": 1,
+      "usuario_id": 2,
+      "livro_id": 1,
+      "exemplar_id": 1,
+      "data_emprestimo": "2026-08-17",
+      "data_prevista": "2026-08-24",
+      "data_devolucao": "2026-08-17",
+      "renovacoes": 0
+    }
+  ],
   "proximos_ids": {
-    "usuario": 2,
-    "livro": 1,
-    "exemplar": 1,
-    "emprestimo": 1
+    "usuario": 3,
+    "livro": 2,
+    "exemplar": 6,
+    "emprestimo": 2
   }
 }
