@@ -3,13 +3,22 @@ from biblioteca import devolucoes, emprestimos, livros, storage, usuarios
 
 def tela_login(dados):
     while True:
-        print("\n=== LOGIN ===")
-        login = input("Usuário: ").strip()
-        senha = input("Senha: ")
-        autenticado = usuarios.autenticar(dados, login, senha)
-        if autenticado is not None:
-            return autenticado
-        print("Usuário ou senha inválidos.")
+        print("\n=== SISTEMA DE BIBLIOTECA ===")
+        print("1 - Usuário ")
+        print("2 - Sair")
+        op=input("")
+        if op=="1":
+            print("\n=== LOGIN ===")        
+            login = input("Usuário: ").strip()
+            senha = input("Senha: ")
+            autenticado = usuarios.autenticar(dados, login, senha)
+            if autenticado is not None:
+                return autenticado
+            print("Usuário ou senha inválidos.")
+        elif op==2:
+            break
+        else:
+            print("Opção inválida.")
 
 
 def escolher_obra(dados):
