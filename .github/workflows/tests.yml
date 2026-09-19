@@ -15,7 +15,7 @@ jobs:
     name: Security Gate
     runs-on: ubuntu-latest
 
-     steps:
+    steps:
         - name: Checkout do codigo
           uses: actions/checkout@v4
 
