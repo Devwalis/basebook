@@ -1,4 +1,5 @@
-name: Tests
+
+
 
 on:
   push:
@@ -8,63 +9,54 @@ on:
 
 jobs:
 
-  #==============
-  #SECURITY
-  #==============
+  # ========================================
+  # SECURITY
+  # ========================================
   security:
     name: Security Gate
     runs-on: ubuntu-latest
 
     steps:
-        - name: Checkout do codigo
-          uses: actions/checkout@v4
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
 
-        - name: Configurar Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.12'
-      
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-        - name: Instalar ferramentas de segurança
-          run: |
-            python -m pip install --upgrade pip
-            pip install bandit pip-audit
+      - name: Instalar ferramentas de segurança
+        run: |
+          python -m pip install --upgrade pip
+          pip install bandit pip-audit
 
-        - name: Executar Bandit
-          run: | 
-            bandit -r basebook -ll
+      - name: Executar Bandit
+        run: |
+          bandit -r biblioteca -ll
 
-        - name: Executar pip-audit
-          run: |
-            pip-audit -r basebook
+      - name: Executar pip-audit
+        run: |
+          pip-audit
 
+  # ========================================
+  # TESTES
+  # ========================================
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
 
-   #==============
-   #Tests:
-   #==============
+    needs: security
 
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
 
-   tests:
-      name: Tests
-      runs-on: ubuntu-latest
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-
-      needs: security
-
-
-      steps:
-        - name: Checkout do codigo
-          uses: actions/checkout@v4
-  
-
-        - name: Configurar python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.12'
-
-
-        - name: Executar testes
-          run: |
-            python3 -m unittest discover -v
-
+      - name: Executar testes
+        run: |
+          python3 -m unittest discover -v
 
