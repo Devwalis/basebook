@@ -3,6 +3,7 @@ services:
     build: .
     image: basebook
     container_name: basebook
+    tty: true
     ports:
       - "8080:8080"
     volumes:
