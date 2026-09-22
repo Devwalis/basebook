@@ -1,0 +1,18 @@
+services:
+  basebook:
+    build: .
+    image: basebook
+    container_name: basebook
+    tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - basebook_data:/data
+    networks:
+      - basebook_network
+
+volumes:
+  basebook_data:
+
+networks:
+  basebook_network:
