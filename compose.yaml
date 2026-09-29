@@ -1,10 +1,10 @@
 services:
   basebook:
-    build: .
+    
     image: basebook
-    container_name: basebook
-    tty: true
     stdin_open: true
+    tty: true
+    
     ports:
       - "8080:8080"
     volumes:
