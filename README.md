@@ -23,7 +23,7 @@ persistência dos dados em arquivo JSON.
 
 ## Requisitos
 
-- Python 3.12+
+- Python 3.13+
 - Sem dependências externas (apenas biblioteca padrão)
 
 ## Como executar
