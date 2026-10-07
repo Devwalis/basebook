@@ -1,0 +1,5 @@
+=== REPOSITÓRIO ===
+URL: https://github.com/Devwalis/basebook.git
+Branch: feat/auditoria
+Commit: c3127a9fe245d67a336e630784da3f4911d81d41
+Último commit: c3127a9 Arquivos de auditoria
