@@ -1,0 +1,12 @@
+Faça login com seu ID Docker ou endereço de e-mail para usar o Docker Scout.
+
+Se você não tiver um ID Docker, acesse https://hub.docker.com para
+criar um. Você pode fazer login com sua senha ou um Token de Acesso Pessoal (PAT)
+executando o comando `docker login`.
+
+O uso de um PAT com escopo limitado oferece maior segurança e é necessário para organizações
+que utilizam SSO. Saiba mais em https://docs.docker.com/go/access-tokens/
+
+Você também pode fazer login usando o Docker Desktop.
+
+Traduzir esta página

@@ -1,0 +1,5 @@
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+biblioteca-grupo6:v1   cd17437d4599        163MB             0B        
+ID: sha256:cd17437d459978827af88f07fe36a9e9916af0def878989f441e41fcccced923
+Created: 2026-10-07T08:58:33.615019306-03:00
+Size bytes: 162954263

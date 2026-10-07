@@ -1,0 +1,52 @@
+# Scan V1 - Resumo
+
+Imagem: biblioteca-grupo6:v1
+Data: 07/10/2026 11:41:45
+
+    ✗ HIGH CVE-2026-97689 [Allocation of Resources Without Limits or Throttling]
+    ✗ HIGH CVE-2026-97687 [Improper Certificate Validation]
+    ✗ MEDIUM CVE-2026-97688 [Loop with Unreachable Exit Condition ('Infinite Loop')]
+    ✗ HIGH GHSA-6v7p-g79w-8964 [Use After Free]
+    ✗ HIGH CVE-2026-57585
+    ✗ HIGH CVE-2025-47273 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+    ✗ MEDIUM CVE-2026-59890 [Improper Handling of Unicode Encoding]
+    ✗ HIGH CVE-2026-85091
+    ✗ HIGH CVE-2026-95619
+    ✗ MEDIUM CVE-2025-8869 [Improper Link Resolution Before File Access ('Link Following')]
+    ✗ MEDIUM CVE-2026-13346 [Absolute Path Traversal]
+    ✗ MEDIUM CVE-2026-6357 [Inclusion of Functionality from Untrusted Control Sphere]
+    ✗ MEDIUM CVE-2026-3219 [Unrestricted Upload of File with Dangerous Type]
+    ✗ MEDIUM CVE-2026-8643 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+    ✗ LOW CVE-2026-1703 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+    ✗ MEDIUM CVE-2025-45582
+    ✗ LOW CVE-2005-2541
+    ✗ LOW CVE-2019-9192
+    ✗ LOW CVE-2019-1010025
+    ✗ LOW CVE-2019-1010024
+    ✗ LOW CVE-2019-1010023
+    ✗ LOW CVE-2019-1010022
+    ✗ LOW CVE-2018-20796
+    ✗ LOW CVE-2010-4756
+    ✗ LOW CVE-2026-56392
+    ✗ LOW CVE-2026-56391
+    ✗ LOW CVE-2025-5278
+    ✗ LOW CVE-2017-18018
+    ✗ LOW CVE-2023-31439
+    ✗ LOW CVE-2023-31438
+    ✗ LOW CVE-2023-31437
+    ✗ LOW CVE-2013-4392
+    ✗ LOW CVE-2025-70873
+    ✗ LOW CVE-2021-45346
+    ✗ LOW CVE-2026-102474
+    ✗ LOW CVE-2026-102473
+    ✗ LOW CVE-2026-53910
+    ✗ LOW CVE-2007-5686
+    ✗ LOW CVE-2011-3374
+    ✗ LOW CVE-2010-0928
+    ✗ LOW CVE-2022-0563
+    ✗ LOW CVE-2011-4116
+42 vulnerabilities found in 18 packages
+  CRITICAL  0  
+  HIGH      7  
+  MEDIUM    8  
+  LOW       27 
