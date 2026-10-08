@@ -1,6 +1,6 @@
 
  Target   │  local://biblioteca-grupo6:v2
-   digest │  786bb3d64449
+   digest │  07999d731530
 
 ## Recommended fixes
 

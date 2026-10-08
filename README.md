@@ -58,14 +58,19 @@ dados/biblioteca.json
 docs/
 ├── baseline-v1.0.0.md
 └── verificacao.md
+entregaveis/
+├── relatorio-final.md
+├── planilha-vulnerabilidades.csv
+└── testes-funcionais.md
 ```
 
 ## Documentação
 
 - [Baseline v1.0.0](docs/baseline-v1.0.0.md)
 - [Registro de verificação](docs/verificacao.md)
-- [Relatório de investigação de CVEs](auditoria/relatorio-cves.md)
-- [Planilha de vulnerabilidades](auditoria/planilha-vulnerabilidades.csv)
+- [Ficha final da auditoria](entregaveis/relatorio-final.md)
+- [Planilha de vulnerabilidades](entregaveis/planilha-vulnerabilidades.csv)
+- [Testes funcionais](entregaveis/testes-funcionais.md)
 
 ## Versão
 

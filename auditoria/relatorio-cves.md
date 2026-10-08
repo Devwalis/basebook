@@ -7,7 +7,7 @@ grupo. O Docker Scout encontrou 0 vulnerabilidades CRITICAL, 7 HIGH, 8 MEDIUM e
 27 LOW, totalizando 42 vulnerabilidades em 18 pacotes.
 
 As 15 vulnerabilidades selecionadas estão na planilha
-`planilha-vulnerabilidades.csv`: 5 HIGH, 5 MEDIUM e 5 LOW.
+`../entregaveis/planilha-vulnerabilidades.csv`: 5 HIGH, 5 MEDIUM e 5 LOW.
 
 ## Origem das vulnerabilidades
 
@@ -81,4 +81,4 @@ entre as 15 selecionadas: `zlib`, `gcc-14` e `tar`.
 - `teste-app-v2-login.txt`: login e menu administrativo na V2.
 - `teste-app-v2.md`: resumo do teste funcional da V2.
 - `recomendacao-v2-resumo.txt`: resumo em português da recomendação da imagem base.
-- `planilha-vulnerabilidades.csv`: investigação das 15 vulnerabilidades.
+- `../entregaveis/planilha-vulnerabilidades.csv`: investigação das 15 vulnerabilidades.

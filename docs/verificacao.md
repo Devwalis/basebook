@@ -37,7 +37,7 @@ Em 07/10/2026, foi realizada uma auditoria separada das imagens Docker V1 e V2.
 Essa atividade não altera o registro histórico da pré-baseline. Os resultados
 estão documentados em:
 
-- [Relatório de investigação de CVEs](../auditoria/relatorio-cves.md)
+- [Ficha final da auditoria](../entregaveis/relatorio-final.md)
 
 Na V2, a aplicação foi executada com Python 3.12, o login administrativo foi
 validado e os 6 testes automatizados permaneceram aprovados.

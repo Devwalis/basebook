@@ -2,7 +2,7 @@
 
 Imagem: biblioteca-grupo6:v2
 Imagem base: python:3.12-slim
-Digest: sha256:786bb3d6444984db3520d66158bd117bbe6e68a900651770127d3743c5794e98
+Digest: sha256:07999d7315304708d5b8d27054dd8b96ca733c2f2aa14725151f8450f13219de
 Tamanho: 45,01 MB
 Pacotes analisados: 123
 

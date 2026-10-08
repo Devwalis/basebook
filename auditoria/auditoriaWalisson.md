@@ -124,13 +124,13 @@ O menu administrativo foi apresentado corretamente.
 | Funcionalidade       | Resultado               |
 | -------------------- | ----------------------- |
 | Login administrativo | OK                      |
-| Cadastro de usuário  | preencher após teste    |
-| Cadastro de livro    | preencher após teste    |
-| Listagem de livros   | preencher após teste    |
-| Remoção de livro     | não testado / preencher |
-| Empréstimo           | não testado / preencher |
-| Renovação            | não testado / preencher |
-| Devolução            | não testado / preencher |
+| Cadastro de usuário  | OK                      |
+| Cadastro de livro    | OK                      |
+| Listagem de livros   | OK                      |
+| Remoção de livro     | OK                      |
+| Empréstimo           | OK                      |
+| Renovação            | OK                      |
+| Devolução            | OK                      |
 
 ### Observação
 
@@ -138,7 +138,8 @@ O primeiro teste automatizado utilizando `printf` apresentou `EOFError` devido a
 
 **Evidências:**
 
-* O teste interativo foi registrado no histórico da auditoria.
+* `teste-app-v1-login.txt`
+* `teste-funcional-v1.txt`
 
 ---
 
@@ -192,6 +193,8 @@ O Docker Scout também forneceu recomendações de atualização da imagem base.
 | `dockerfile-v1.txt`      | Dockerfile original               |
 | `build-v1.md`            | Resumo do build                   |
 | `imagem-v1.txt`          | Informações e tamanho da imagem   |
+| `teste-app-v1-login.txt` | Login e menu administrativo V1    |
+| `teste-funcional-v1.txt` | Fluxos principais da aplicação V1 |
 | `scan-v1.txt`            | Scan completo do Docker Scout     |
 | `scan-v1-resumo.txt`     | Resumo das vulnerabilidades       |
 | `recomendacao-v1.txt`    | Recomendação do Docker Scout      |

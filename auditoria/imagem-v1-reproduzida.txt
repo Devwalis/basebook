@@ -1,0 +1,3 @@
+Imagem: biblioteca-grupo6:v1
+ID: sha256:49d8253bd72de80389614c0ad9026c40176b758607a65c709aaf405b7165dc5c
+Tamanho em bytes: 43278874
