@@ -14,9 +14,9 @@ baseline. Data: 2026-08-16.
 | 5. Nenhuma alteração importante sem commit | OK | Working tree limpa |
 | 6. Arquivos necessários estão versionados | OK | Código, dados iniciais, documentação e `.gitignore` |
 | 7. Não existem arquivos desnecessários no repositório | OK | Apenas arquivos do projeto; `__pycache__` ignorado |
-| 8. README corresponde ao funcionamento atual | **PENDENTE** | README ainda é o template padrão do GitLab; será substituído |
-| 9. Outra pessoa consegue executar o projeto | **PENDENTE** | Necessário documentar comando de execução e credenciais padrão |
-| 10. Testes automatizados do sistema | OK | 22 testes cobrindo login, cadastros, empréstimo, renovação, devolução, limite e atraso |
+| 8. README corresponde ao funcionamento atual | OK | README documenta funcionalidades, requisitos, execução e credenciais padrão |
+| 9. Outra pessoa consegue executar o projeto | OK | Execução documentada com `python3 main.py` e credenciais padrão |
+| 10. Testes automatizados do sistema | OK | 6 testes executados com `python3 -m unittest discover -s tests -q` |
 
 ## Problemas encontrados e correções
 
@@ -30,3 +30,14 @@ baseline. Data: 2026-08-16.
 ## Conclusão
 
 Após as correções, o sistema está estável e apto a receber a baseline v1.0.0.
+
+## Atualização — Auditoria Docker da Aula 27
+
+Em 07/10/2026, foi realizada uma auditoria separada das imagens Docker V1 e V2.
+Essa atividade não altera o registro histórico da pré-baseline. Os resultados
+estão documentados em:
+
+- [Relatório de investigação de CVEs](../auditoria/relatorio-cves.md)
+
+Na V2, a aplicação foi executada com Python 3.12, o login administrativo foi
+validado e os 6 testes automatizados permaneceram aprovados.

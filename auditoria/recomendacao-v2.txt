@@ -1,0 +1,27 @@
+
+ Target   │  local://biblioteca-grupo6:v2
+   digest │  786bb3d64449
+
+## Recommended fixes
+
+  Base image is  python:3.12-slim
+
+ Name            │  3.12-slim
+ Digest          │  sha256:2b4f19dae3a777dfc3b76730bda1e82e1f66ab2a2686fa93ca78edbfb4f04ffe
+ Vulnerabilities │    0C     2H     6M    27L
+ Pushed          │ 1 day ago
+ Size            │ 43 MB
+ Packages        │ 124
+ Runtime         │ 3.12.15
+
+
+Refresh base image
+  Rebuild the image using a newer base image version. Updating this may result in breaking changes.
+
+  ✓ This image version is up to date.
+
+
+Change base image
+  The list displays new recommended tags in descending order, where the top results are rated as most suitable.
+
+  ✓ There are no tag recommendations at this time.

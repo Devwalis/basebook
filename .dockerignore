@@ -1,0 +1,12 @@
+.git
+.github
+.venv
+__pycache__
+*.py[cod]
+tests
+docs
+auditoria
+Dockerfile.save
+README.md
+requirements.txt
+compose.yaml

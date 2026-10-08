@@ -89,7 +89,7 @@ sha256:cd17437d459978827af88f07fe36a9e9916af0def878989f441e41fcccced923
 
 **Tamanho da imagem:** consultar `imagem-v1.txt`.
 
-**Evidência detalhada:** `build-v1.log`
+**Evidência detalhada:** `build-v1.md`
 
 ---
 
@@ -138,8 +138,7 @@ O primeiro teste automatizado utilizando `printf` apresentou `EOFError` devido a
 
 **Evidências:**
 
-* `teste-app-v1.log`
-* `teste-app-v1.md`
+* O teste interativo foi registrado no histórico da auditoria.
 
 ---
 
@@ -179,7 +178,7 @@ O Docker Scout também forneceu recomendações de atualização da imagem base.
 
 * `scan-v1.txt`
 * `scan-v1-resumo.txt`
-* `recommendations-v1.txt`
+* `recomendacao-v1.txt`
 
 ---
 
@@ -191,10 +190,8 @@ O Docker Scout também forneceu recomendações de atualização da imagem base.
 | `repositorio-v1.txt`     | Git, branch, remote e commit      |
 | `estrutura-v1.txt`       | Estrutura do projeto              |
 | `dockerfile-v1.txt`      | Dockerfile original               |
-| `build-v1.log`           | Log completo do build             |
+| `build-v1.md`            | Resumo do build                   |
 | `imagem-v1.txt`          | Informações e tamanho da imagem   |
-| `teste-app-v1.log`       | Log do teste da aplicação         |
-| `teste-app-v1.md`        | Resumo dos testes funcionais      |
 | `scan-v1.txt`            | Scan completo do Docker Scout     |
 | `scan-v1-resumo.txt`     | Resumo das vulnerabilidades       |
-| `recommendations-v1.txt` | Recomendações do Docker Scout     |
+| `recomendacao-v1.txt`    | Recomendação do Docker Scout      |

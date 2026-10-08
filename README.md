@@ -23,8 +23,8 @@ persistência dos dados em arquivo JSON.
 
 ## Requisitos
 
-- Python 3.13+
-- Sem dependências externas (apenas biblioteca padrão)
+- Python 3.12+
+- A aplicação não possui dependências externas em tempo de execução
 
 ## Como executar
 
@@ -64,6 +64,8 @@ docs/
 
 - [Baseline v1.0.0](docs/baseline-v1.0.0.md)
 - [Registro de verificação](docs/verificacao.md)
+- [Relatório de investigação de CVEs](auditoria/relatorio-cves.md)
+- [Planilha de vulnerabilidades](auditoria/planilha-vulnerabilidades.csv)
 
 ## Versão
 

@@ -1,0 +1,16 @@
+numero;severidade;cve_ghsa;pacote;versao_v1;versao_corrigida;origem;correcao_disponivel;correcao_aplicada;resultado_v2;fonte
+1;HIGH;CVE-2026-97689;urllib3;2.7.0;2.8.0;dependência Python transitiva;sim;sim;corrigida: pacote removido da imagem final;scan-v1.txt linhas 19-28;scan-v2.txt
+2;HIGH;CVE-2026-97687;urllib3;2.7.0;2.8.0;dependência Python transitiva;sim;sim;corrigida: pacote removido da imagem final;scan-v1.txt linhas 19-36;scan-v2.txt
+3;HIGH;GHSA-6v7p-g79w-8964;msgpack;1.1.2;1.2.1;dependência Python transitiva;sim;sim;corrigida: pacote removido da imagem final;scan-v1.txt linhas 47-55;scan-v2.txt
+4;HIGH;CVE-2026-57585;msgpack;1.1.2;1.2.1;dependência Python transitiva;sim;sim;corrigida: pacote removido da imagem final;scan-v1.txt linhas 47-62;scan-v2.txt
+5;HIGH;CVE-2025-47273;setuptools;70.3.0;78.1.1;componente Python da imagem base;sim;sim;corrigida: componente removido da imagem final;scan-v1.txt linhas 65-73;scan-v2.txt
+6;MEDIUM;CVE-2026-97688;urllib3;2.7.0;2.8.0;dependência Python transitiva;sim;sim;corrigida: pacote removido da imagem final;scan-v1.txt linhas 19-44;scan-v2.txt
+7;MEDIUM;CVE-2026-59890;setuptools;70.3.0;83.0.0;componente Python da imagem base;sim;sim;corrigida: componente removido da imagem final;scan-v1.txt linhas 65-80;scan-v2.txt
+8;MEDIUM;CVE-2025-8869;pip;25.0.1;25.3;ferramenta Python da imagem base;sim;sim;corrigida: pip removido da imagem final;scan-v1.txt linhas 101-109;scan-v2.txt
+9;MEDIUM;CVE-2026-13346;pip;25.0.1;26.2.0;ferramenta Python da imagem base;sim;sim;corrigida: pip removido da imagem final;scan-v1.txt linhas 111-116;scan-v2.txt
+10;MEDIUM;CVE-2026-6357;pip;25.0.1;26.1;ferramenta Python da imagem base;sim;sim;corrigida: pip removido da imagem final;scan-v1.txt linhas 118-123;scan-v2.txt
+11;LOW;CVE-2026-1703;pip;25.0.1;26.0;ferramenta Python da imagem base;sim;sim;corrigida: pip removido da imagem final;scan-v1.txt linhas 139-144;scan-v2.txt
+12;LOW;CVE-2005-2541;tar;1.35+dfsg-3.1;sem correção;pacote Debian da imagem base;não;não;permaneceu na V2: sem versão corrigida;scan-v1.txt linhas 147-158;scan-v2.txt linhas 40-51
+13;LOW;CVE-2019-9192;glibc;2.41-12+deb13u4;sem correção;pacote Debian da imagem base;não;não;permaneceu na V2: sem versão corrigida;scan-v1.txt linhas 161-167;scan-v2.txt linhas 54-60
+14;LOW;CVE-2026-56392;coreutils;9.7-3;sem correção;pacote Debian da imagem base;não;não;permaneceu na V2: sem versão corrigida;scan-v1.txt linhas 200-206;scan-v2.txt linhas 181-187
+15;LOW;CVE-2023-31439;systemd;257.13-1~deb13u1;sem correção;pacote Debian da imagem base;não;não;permaneceu na V2: sem versão corrigida;scan-v1.txt linhas 224-230;scan-v2.txt linhas 157-163

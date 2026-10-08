@@ -1,0 +1,21 @@
+# Resumo do Scan V2
+
+Imagem: biblioteca-grupo6:v2
+Imagem base: python:3.12-slim
+Digest: sha256:786bb3d6444984db3520d66158bd117bbe6e68a900651770127d3743c5794e98
+Tamanho: 45,01 MB
+Pacotes analisados: 123
+
+Vulnerabilidades encontradas:
+
+CRITICAL: 0
+HIGH: 2
+MEDIUM: 1
+LOW: 26
+TOTAL: 29
+
+Pacotes vulneráveis: 14
+
+As vulnerabilidades Python selecionadas na V1 não aparecem na V2. Permanecem
+vulnerabilidades em pacotes Debian da imagem base, incluindo casos sem versão
+corrigida informada pelo Docker Scout.
