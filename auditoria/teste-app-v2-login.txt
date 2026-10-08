@@ -1,0 +1,19 @@
+
+=== SISTEMA DE BIBLIOTECA ===
+1 - Usuário
+2 - Sair
+
+=== LOGIN ===
+Usuário: Senha: Bem-vindo(a), Administrador!
+
+=== SISTEMA DE BIBLIOTECA (BIBLIOTECÁRIO) ===
+1 - Cadastrar usuário
+2 - Cadastrar livro
+3 - Remover livro
+4 - Listar livros
+5 - Emprestar livro
+6 - Renovar empréstimo
+7 - Devolver livro
+8 - Ver todos os empréstimos
+9 - Sair
+Opção: Saindo do sistema. Até logo!

@@ -1,0 +1,10 @@
+# Resumo das recomendações para a V2
+
+Imagem analisada: biblioteca-grupo6:v2
+Imagem base: python:3.12-slim
+Versão do Python: 3.12.15
+
+O Docker Scout informou que a imagem base está atualizada e não apresentou uma
+recomendação de tag alternativa.
+
+O resultado bruto está em `recomendacao-v2.txt`.
