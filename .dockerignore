@@ -6,6 +6,7 @@ __pycache__
 tests
 docs
 auditoria
+entregaveis
 Dockerfile.save
 README.md
 requirements.txt

@@ -1,0 +1,1 @@
+OK: cadastro, busca, empréstimo, renovação, devolução e remoção
