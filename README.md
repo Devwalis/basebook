@@ -60,8 +60,11 @@ docs/
 └── verificacao.md
 entregaveis/
 ├── relatorio-final.md
+├── relatorio-final.pdf
 ├── planilha-vulnerabilidades.csv
-└── testes-funcionais.md
+├── planilha-vulnerabilidades.pdf
+├── testes-funcionais.md
+└── testes-funcionais.pdf
 ```
 
 ## Documentação
@@ -69,8 +72,11 @@ entregaveis/
 - [Baseline v1.0.0](docs/baseline-v1.0.0.md)
 - [Registro de verificação](docs/verificacao.md)
 - [Ficha final da auditoria](entregaveis/relatorio-final.md)
+- [Ficha final da auditoria em PDF](entregaveis/relatorio-final.pdf)
 - [Planilha de vulnerabilidades](entregaveis/planilha-vulnerabilidades.csv)
+- [Planilha de vulnerabilidades em PDF](entregaveis/planilha-vulnerabilidades.pdf)
 - [Testes funcionais](entregaveis/testes-funcionais.md)
+- [Testes funcionais em PDF](entregaveis/testes-funcionais.pdf)
 
 ## Versão
 
