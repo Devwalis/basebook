@@ -1,0 +1,21 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: default
+platforms:
+  - name: localhost
+    ansible_connection: local
+provisioner:
+  name: ansible
+  env:
+    ANSIBLE_ROLES_PATH: "../../.."
+  inventory:
+    host_vars:
+      localhost:
+        ansible_connection: local
+verifier:
+  name: testinfra
+  directory: tests
+  options:
+    v: true
