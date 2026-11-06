@@ -3,6 +3,7 @@ from datetime import date
 from biblioteca import storage
 
 
+# Ponto de instrumentação futuro: registro de devoluções.
 def devolver(dados, emprestimo, obra, exemplar):
     if emprestimo["data_devolucao"] is not None:
         return None, "Empréstimo já devolvido."
