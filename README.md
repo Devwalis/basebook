@@ -80,6 +80,8 @@ basebook/
     ├── relatorio-final.md / .pdf
     ├── planilha-vulnerabilidades.csv / .pdf
     ├── respostas-atividade-devops.md / .pdf
+    ├── observabilidade-loki.md / .pdf
+    ├── arquitetura-logs-loki.svg
     └── testes-funcionais.md / .pdf
 ```
 
@@ -95,6 +97,9 @@ basebook/
 - [Testes funcionais em PDF](entregaveis/testes-funcionais.pdf)
 - [Respostas da atividade DevOps](entregaveis/respostas-atividade-devops.md)
 - [Respostas da atividade DevOps em PDF](entregaveis/respostas-atividade-devops.pdf)
+- [Proposta de observabilidade com Loki](entregaveis/observabilidade-loki.md)
+- [Proposta de observabilidade em PDF](entregaveis/observabilidade-loki.pdf)
+- [Diagrama de arquitetura de logs (SVG)](entregaveis/arquitetura-logs-loki.svg)
 
 ## Versão
 

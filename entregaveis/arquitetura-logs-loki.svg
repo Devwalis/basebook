@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700" role="img" aria-labelledby="title desc">
+  <title id="title">Arquitetura de coleta e consulta de logs do Sistema de Biblioteca</title>
+  <desc id="desc">A aplicação grava logs JSON em arquivo. Grafana Alloy coleta e envia ao Loki. Grafana consulta o Loki e apresenta os resultados ao administrador.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L11,6 L1,11 z" fill="#111" />
+    </marker>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #111; }
+      .box { fill: #fff; stroke: #111; stroke-width: 2.5; rx: 12; }
+      .arrow { fill: none; stroke: #111; stroke-width: 3; marker-end: url(#arrow); }
+      .title { font-size: 28px; font-weight: 700; }
+      .label { font-size: 22px; font-weight: 700; }
+      .detail { font-size: 17px; }
+      .small { font-size: 15px; }
+    </style>
+  </defs>
+  <rect width="1400" height="700" fill="#fff" />
+  <text x="700" y="55" text-anchor="middle" class="title">Fluxo de logs — Sistema de Biblioteca</text>
+
+  <rect x="55" y="145" width="330" height="390" class="box" />
+  <text x="220" y="185" text-anchor="middle" class="label">Host da aplicação</text>
+  <rect x="90" y="220" width="260" height="105" class="box" />
+  <text x="220" y="260" text-anchor="middle" class="label">Sistema BaseBook</text>
+  <text x="220" y="290" text-anchor="middle" class="detail">Python · operações da biblioteca</text>
+  <path d="M220 326 L220 368" class="arrow" />
+  <text x="238" y="354" class="small">grava eventos</text>
+  <rect x="90" y="380" width="260" height="105" class="box" />
+  <text x="220" y="421" text-anchor="middle" class="label">Arquivo de logs</text>
+  <text x="220" y="452" text-anchor="middle" class="detail">app.jsonl · JSON por linha</text>
+
+  <rect x="465" y="255" width="235" height="180" class="box" />
+  <text x="582" y="305" text-anchor="middle" class="label">Grafana Alloy</text>
+  <text x="582" y="342" text-anchor="middle" class="detail">Lê o arquivo</text>
+  <text x="582" y="370" text-anchor="middle" class="detail">e encaminha eventos</text>
+  <text x="582" y="401" text-anchor="middle" class="small">agente no host</text>
+
+  <rect x="790" y="255" width="235" height="180" class="box" />
+  <text x="907" y="305" text-anchor="middle" class="label">Loki</text>
+  <text x="907" y="342" text-anchor="middle" class="detail">Armazena logs</text>
+  <text x="907" y="370" text-anchor="middle" class="detail">e atende consultas</text>
+  <text x="907" y="401" text-anchor="middle" class="small">HTTP · porta 3100</text>
+
+  <rect x="1110" y="255" width="235" height="180" class="box" />
+  <text x="1227" y="305" text-anchor="middle" class="label">Grafana</text>
+  <text x="1227" y="342" text-anchor="middle" class="detail">Explore · LogQL</text>
+  <text x="1227" y="370" text-anchor="middle" class="detail">painéis e alertas</text>
+  <text x="1227" y="401" text-anchor="middle" class="small">interface web</text>
+
+  <path d="M352 430 C400 430 410 345 461 345" class="arrow" />
+  <text x="405" y="405" text-anchor="middle" class="small">lê arquivo</text>
+  <path d="M702 345 L786 345" class="arrow" />
+  <text x="744" y="325" text-anchor="middle" class="small">envia logs</text>
+  <path d="M1027 333 L1106 333" class="arrow" />
+  <text x="1067" y="323" text-anchor="middle" class="small">resultados</text>
+  <path d="M1108 378 L1029 378" class="arrow" />
+  <text x="1067" y="402" text-anchor="middle" class="small">consultas LogQL</text>
+
+  <path d="M1227 438 L1227 548" class="arrow" />
+  <rect x="1100" y="565" width="255" height="75" class="box" />
+  <text x="1227" y="610" text-anchor="middle" class="label">Administrador</text>
+  <text x="700" y="625" text-anchor="middle" class="detail">Fluxo: aplicação → arquivo → coleta → armazenamento → pesquisa e visualização</text>
+</svg>
