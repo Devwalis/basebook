@@ -1,6 +1,7 @@
 from biblioteca import models, storage
 
 
+# Ponto de instrumentação futuro: cadastro e autenticação de usuários.
 def cadastrar(dados, login, nome, senha, perfil):
     login = login.strip().lower()
     nome = nome.strip()
@@ -24,6 +25,7 @@ def cadastrar(dados, login, nome, senha, perfil):
     return usuario, None
 
 
+# Ponto de instrumentação futuro: resultado das tentativas de login.
 def autenticar(dados, login, senha):
     login = login.strip().lower()
     for usuario in dados["usuarios"]:

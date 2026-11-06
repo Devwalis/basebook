@@ -30,6 +30,7 @@ def pode_emprestar(dados, usuario):
     return True, None
 
 
+# Ponto de instrumentação futuro: acompanhamento de empréstimos e renovações.
 def emprestar(dados, usuario, obra, exemplar):
     ok, motivo = pode_emprestar(dados, usuario)
     if not ok:

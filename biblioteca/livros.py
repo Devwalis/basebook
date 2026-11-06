@@ -1,6 +1,7 @@
 from biblioteca import models, storage
 
 
+# Ponto de instrumentação futuro: cadastro e remoção de livros.
 def cadastrar(dados, titulo, quantidade=1):
     titulo = titulo.strip()
     if not titulo:

@@ -73,6 +73,14 @@ basebook/
 │           ├── molecule.yml
 │           ├── converge.yml
 │           └── tests/test_default.py
+├── monitoramento.py
+├── Docker/
+│   ├── compose.yml
+│   ├── prometheus/
+│   │   ├── prometheus.yml
+│   │   └── alert-rules.yml
+│   └── alertmanager/
+│       └── alertmanager.yml
 ├── docs/
 │   ├── baseline-v1.0.0.md
 │   └── verificacao.md
@@ -100,6 +108,7 @@ basebook/
 - [Proposta de observabilidade com Loki](entregaveis/observabilidade-loki.md)
 - [Proposta de observabilidade em PDF](entregaveis/observabilidade-loki.pdf)
 - [Diagrama de arquitetura de logs (SVG)](entregaveis/arquitetura-logs-loki.svg)
+- [Estrutura para Prometheus e Alertmanager](Docker/compose.yml)
 
 ## Versão
 
