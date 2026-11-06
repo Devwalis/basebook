@@ -46,25 +46,41 @@ Os dados são salvos automaticamente em `dados/biblioteca.json`.
 ## Estrutura do projeto
 
 ```
-biblioteca/
-├── app.py          # menu e fluxos do terminal
-├── usuarios.py     # cadastro e autenticação de usuários
-├── livros.py       # cadastro e remoção de obras/exemplares
-├── emprestimos.py  # empréstimo, renovação e regras
-├── devolucoes.py   # devolução de livros
-├── models.py       # constantes e regras compartilhadas
-└── storage.py      # leitura/escrita do JSON
-dados/biblioteca.json
-docs/
-├── baseline-v1.0.0.md
-└── verificacao.md
-entregaveis/
-├── relatorio-final.md
-├── relatorio-final.pdf
-├── planilha-vulnerabilidades.csv
-├── planilha-vulnerabilidades.pdf
-├── testes-funcionais.md
-└── testes-funcionais.pdf
+basebook/
+├── main.py
+├── biblioteca/
+│   ├── app.py          # menu e fluxos do terminal
+│   ├── usuarios.py     # cadastro e autenticação de usuários
+│   ├── livros.py       # cadastro e remoção de obras/exemplares
+│   ├── emprestimos.py  # empréstimo, renovação e regras
+│   ├── devolucoes.py   # devolução de livros
+│   ├── models.py       # constantes e regras compartilhadas
+│   └── storage.py      # leitura/escrita do JSON
+├── dados/biblioteca.json
+├── tests/
+│   ├── test_devolucoes.py
+│   ├── test_emprestimos.py
+│   ├── test_livros.py
+│   └── test_usuario.py
+├── Ansible/
+│   ├── ansible.cfg
+│   ├── inventory.ini
+│   ├── playbook.yml
+│   └── roles/biblioteca/
+│       ├── defaults/main.yml
+│       ├── tasks/main.yml
+│       └── molecule/default/
+│           ├── molecule.yml
+│           ├── converge.yml
+│           └── tests/test_default.py
+├── docs/
+│   ├── baseline-v1.0.0.md
+│   └── verificacao.md
+└── entregaveis/
+    ├── relatorio-final.md / .pdf
+    ├── planilha-vulnerabilidades.csv / .pdf
+    ├── respostas-atividade-devops.md / .pdf
+    └── testes-funcionais.md / .pdf
 ```
 
 ## Documentação
@@ -77,6 +93,8 @@ entregaveis/
 - [Planilha de vulnerabilidades em PDF](entregaveis/planilha-vulnerabilidades.pdf)
 - [Testes funcionais](entregaveis/testes-funcionais.md)
 - [Testes funcionais em PDF](entregaveis/testes-funcionais.pdf)
+- [Respostas da atividade DevOps](entregaveis/respostas-atividade-devops.md)
+- [Respostas da atividade DevOps em PDF](entregaveis/respostas-atividade-devops.pdf)
 
 ## Versão
 

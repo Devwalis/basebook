@@ -1,0 +1,7 @@
+---
+- name: Aplicar a Role biblioteca no cenário local
+  hosts: all
+  connection: local
+  gather_facts: false
+  roles:
+    - biblioteca

@@ -1,0 +1,7 @@
+---
+- name: Preparar e testar o Sistema-Biblioteca localmente
+  hosts: servidores
+  connection: local
+  gather_facts: false
+  roles:
+    - biblioteca

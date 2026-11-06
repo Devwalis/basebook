@@ -1,0 +1,83 @@
+---
+- name: Verificar se o Python 3 está instalado
+  ansible.builtin.command: python3 --version
+  register: biblioteca_python_version
+  changed_when: false
+
+- name: Exibir a versão do Python encontrada
+  ansible.builtin.debug:
+    msg: "{{ biblioteca_python_version.stdout }}"
+
+- name: Criar o diretório da aplicação
+  ansible.builtin.file:
+    path: "{{ app_dir }}"
+    state: directory
+    mode: "0755"
+
+- name: Criar os diretórios do código e dos testes
+  ansible.builtin.file:
+    path: "{{ app_dir }}/{{ item }}"
+    state: directory
+    mode: "0755"
+  loop:
+    - biblioteca
+    - tests
+
+- name: Copiar somente os arquivos-fonte necessários
+  ansible.builtin.copy:
+    src: "{{ role_path }}/../../../{{ item }}"
+    dest: "{{ app_dir }}/{{ item }}"
+    mode: preserve
+  loop:
+    - main.py
+    - biblioteca/__init__.py
+    - biblioteca/app.py
+    - biblioteca/devolucoes.py
+    - biblioteca/emprestimos.py
+    - biblioteca/livros.py
+    - biblioteca/models.py
+    - biblioteca/storage.py
+    - biblioteca/sistema.py
+    - biblioteca/usuarios.py
+    - requirements.txt
+    - tests/__init__.py
+    - tests/test_devolucoes.py
+    - tests/test_emprestimos.py
+    - tests/test_livros.py
+    - tests/test_usuario.py
+
+- name: Criar o ambiente virtual da aplicação
+  ansible.builtin.command:
+    argv:
+      - python3
+      - -m
+      - venv
+      - "{{ venv_dir }}"
+    creates: "{{ venv_dir }}/bin/python"
+
+- name: Instalar as dependências da aplicação
+  ansible.builtin.pip:
+    requirements: "{{ app_dir }}/requirements.txt"
+    virtualenv: "{{ venv_dir }}"
+    virtualenv_command: python3 -m venv
+
+- name: Executar os testes automatizados da aplicação
+  ansible.builtin.command:
+    argv:
+      - "{{ venv_dir }}/bin/python"
+      - -m
+      - unittest
+      - discover
+      - -s
+      - tests
+      - -v
+  args:
+    chdir: "{{ app_dir }}"
+  register: biblioteca_testes
+  changed_when: false
+
+- name: Exibir o resultado dos testes da aplicação
+  ansible.builtin.debug:
+    msg:
+      stdout: "{{ biblioteca_testes.stdout_lines }}"
+      stderr: "{{ biblioteca_testes.stderr_lines }}"
